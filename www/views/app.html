@@ -1,0 +1,77 @@
+
+<!-- <ion-header-bar class="bar-positive">
+  <h1 class="title" side="center">John's Todo List</h1>
+</ion-header-bar>
+
+<ion-content class="has-header">
+  <div class="item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="New Todo" ng-model="input.name">
+    </label>
+    <button class="button button-icon ion-android-add-circle" ng-click="addTodo()"></button>
+  </div>
+
+  <ion-list can-swipe="true">
+    <ion-item ng-repeat="item in todos">
+      <i class="icon ion-arrow-left-b"></i>
+      {{item.name}}
+    <ion-option-button class="button button-icon ion-trash-a padding-right" ng-click="deleteTodo(item.id)"></ion-option-button>
+  </ion-item></ion-list>
+</ion-content> -->
+
+
+<ion-header-bar class="bar-positive">
+  <h1 class="title" side="center">Acetaminophen psi parameter calculator</h1>
+</ion-header-bar>
+
+<ion-content class="has-header">
+  <div class="list list-inset card">
+    <label class="item item-input item-floating-label">
+      <span class="input-label"></span>
+      <input type="number" placeholder="APAP Level (μg/mL)">
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label"></span>
+      <input type="number" placeholder="Blood Sampling Time (hour)">
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label"></span>
+      <input type="number" placeholder="Tnac (hour)">
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label"></span>
+      <input type="number" placeholder="Ti (hour)">
+    </label>
+  </div>
+
+  <div class="card">
+      <div class="item item-divider">
+          Concentration VS Time
+      </div>
+      <div class="item item-text-wrap">
+          <canvas id="line" class="chart chart-line" chart-data="dataCT" chart-labels="labelsCT" legend="true" chart-series="seriesCT" options="{showTooltips: false}"></canvas>
+      </div>
+  </div>
+
+  <div class="card">
+      <div class="item item-divider">
+          Risk of Hepatotoxicity
+      </div>
+      <div class="item item-text-wrap">
+          <canvas id="line" class="chart chart-line" chart-data="dataRisk" chart-labels="labelsRisk" legend="true" chart-series="seriesRisk" options="{showTooltips: false}"></canvas>
+      </div>
+  </div>
+
+  <div class="list list-inset card">
+    <div class="item item-text-wrap">
+      PSI value is at XXX
+    </div>
+  </div>
+
+
+
+</ion-content>
+
+
+
+
