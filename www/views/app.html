@@ -26,21 +26,21 @@
 
 <ion-content class="has-header">
   <div class="list list-inset card">
-    <label class="item item-input item-floating-label">
-      <span class="input-label"></span>
-      <input type="number" placeholder="APAP Level (μg/mL)">
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">APAP Level (μg/mL)</span>
+      <input type="number" ng-model="apap" placeholder="ex. 100.00" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti)">
     </label>
-    <label class="item item-input item-floating-label">
-      <span class="input-label"></span>
-      <input type="number" placeholder="Blood Sampling Time (hour)">
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Blood Drawn Time (hour)</span>
+      <input type="number" ng-model="bdrawn" placeholder="ex. 12" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti)">
     </label>
-    <label class="item item-input item-floating-label">
-      <span class="input-label"></span>
-      <input type="number" placeholder="Tnac (hour)">
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Tnac (hour)</span>
+      <input type="number" ng-model="tnac" placeholder="ex. 14" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti)">
     </label>
-    <label class="item item-input item-floating-label">
-      <span class="input-label"></span>
-      <input type="number" placeholder="Ti (hour)">
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Ti (hour)</span>
+      <input type="number" ng-model="ti" placeholder="ex. 4" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti)">
     </label>
   </div>
 
@@ -64,14 +64,16 @@
 
   <div class="list list-inset card">
     <div class="item item-text-wrap">
-      PSI value is at XXX
+      <div ng-if="final_psi === 0">
+        PSI value
+      </div>
+      <div ng-if="final_psi !== 0">
+        <!-- {{final_psi/150 | number: 3}} -->
+        <p ng-bind-html-unsafe="{{final_psi/150 | number: 3}}"></p>
+      </div>
     </div>
   </div>
 
 
 
 </ion-content>
-
-
-
-
