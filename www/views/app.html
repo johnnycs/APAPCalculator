@@ -44,6 +44,17 @@
     </label>
   </div>
 
+  <div class="list list-inset card">
+    <div class="item item-text-wrap">
+      <div ng-if="final_psi === 0">
+        PSI value
+      </div>
+      <div ng-if="final_psi !== 0">
+        {{final_psi/150 | number: 3}}
+      </div>
+    </div>
+  </div>
+
   <div class="card">
       <div class="item item-divider">
           Concentration VS Time
@@ -61,19 +72,6 @@
           <canvas id="line" class="chart chart-line" chart-data="dataRisk" chart-labels="labelsRisk" legend="true" chart-series="seriesRisk" options="{showTooltips: false}"></canvas>
       </div>
   </div>
-
-  <div class="list list-inset card">
-    <div class="item item-text-wrap">
-      <div ng-if="final_psi === 0">
-        PSI value
-      </div>
-      <div ng-if="final_psi !== 0">
-        <!-- {{final_psi/150 | number: 3}} -->
-        <p ng-bind-html-unsafe="{{final_psi/150 | number: 3}}"></p>
-      </div>
-    </div>
-  </div>
-
 
 
 </ion-content>
