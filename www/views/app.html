@@ -28,19 +28,19 @@
   <div class="list list-inset card">
     <label class="item item-input item-stacked-label">
       <span class="input-label">APAP Level (μg/mL)</span>
-      <input type="number" ng-model="apap" placeholder="ex. 100.00" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti)">
+      <input type="number" ng-model="apap" placeholder="ex. 100.00" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti);graphPSI(apap,bdrawn,tnac,ti)">
     </label>
     <label class="item item-input item-stacked-label">
       <span class="input-label">Blood Drawn Time (hour)</span>
-      <input type="number" ng-model="bdrawn" placeholder="ex. 12" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti)">
+      <input type="number" ng-model="bdrawn" placeholder="ex. 12" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti);graphPSI(apap,bdrawn,tnac,ti)">
     </label>
     <label class="item item-input item-stacked-label">
       <span class="input-label">Tnac (hour)</span>
-      <input type="number" ng-model="tnac" placeholder="ex. 14" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti)">
+      <input type="number" ng-model="tnac" placeholder="ex. 14" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti);graphPSI(apap,bdrawn,tnac,ti)">
     </label>
     <label class="item item-input item-stacked-label">
       <span class="input-label">Ti (hour)</span>
-      <input type="number" ng-model="ti" placeholder="ex. 4" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti)">
+      <input type="number" ng-model="ti" placeholder="ex. 4" ng-model-onblur ng-change="getPSI(apap,bdrawn,tnac,ti);graphPSI(apap,bdrawn,tnac,ti)">
     </label>
   </div>
 
