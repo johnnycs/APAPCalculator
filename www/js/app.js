@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('JohnToDoApp', ['ionic', 'backand', 'TodoService','JohnToDoApp2', 'chart.js'])
+angular.module('JohnToDoApp', ['ionic', 'backand', 'TodoService','JohnToDoApp2', 'chart.js','nvd3'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -137,13 +137,3 @@ angular.module('JohnToDoApp', ['ionic', 'backand', 'TodoService','JohnToDoApp2',
 //     deleteTodo: deleteTodo
 //   }
 // })
-
-
-
-
-
-
-
-
-
-

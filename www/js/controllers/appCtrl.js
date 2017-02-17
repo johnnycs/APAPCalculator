@@ -1,6 +1,6 @@
 
 
-angular.module('JohnToDoApp2', ['TodoService', 'chart.js'])
+angular.module('JohnToDoApp2', ['TodoService', 'chart.js', 'nvd3'])
   .controller('appCtrl', function($scope, Todo) {
     // console.log('helloooooooo')
     // $scope.todos = [];
@@ -21,14 +21,13 @@ angular.module('JohnToDoApp2', ['TodoService', 'chart.js'])
         [90, 75, 65, 53, 45, 35, 30],
         []
     ];
-    vm.dataCT_ti = [4];
-
 
     vm.labelsRisk = [1, 2, 3, 4, 5, 6, 7];
     vm.seriesRisk = ['Series B'];
     vm.dataRisk = [
         [100, 50, 25, 12.5, 6.25, 3, 1.5]
     ];
+
 
     vm.getPSI = function(apap,bdrawn,tnac,ti) {
       var apap_lvl = apap*(Math.pow(2,((bdrawn-4)/4.0)))
@@ -50,7 +49,7 @@ angular.module('JohnToDoApp2', ['TodoService', 'chart.js'])
     vm.graphPSI = function(apap,bdrawn,tnac,ti){
       var apap_lvl = apap*(Math.pow(2,((bdrawn-4)/4.0)))
 
-      for(var hour=[],b=24;b>0;hour[--b]=b+1);
+      for(var hour=[],b=ti+24;b>=ti;hour[--b]=b+1);
       for(var threshold=[],b=hour.length;b>0;threshold[--b]=vm.apap_th);
       // console.log(threshold);
 
@@ -62,9 +61,45 @@ angular.module('JohnToDoApp2', ['TodoService', 'chart.js'])
       vm.dataCT[0] = hour.map(psi_val);
 
       vm.dataCT[1] = threshold;
-      console.log(vm.dataCT);
+
+
 
     }
+
+    vm.data = []
+    for(var i = 1; i <= Math.E; i += 0.01) {
+      vm.data.push({x: i, y: Math.log(i)});
+    }
+
+    vm.data = [{
+      key: 'y = log(x)',
+      values: vm.data
+    }];
+
+    nv.addGraph(function() {
+      var chart = nv.models.lineChart()
+        .showLegend(false)
+        .showYAxis(true)
+        .showXAxis(true);
+
+      chart.xAxis
+        .axisLabel('x')
+        .tickFormat(d3.format('.2f'));
+
+      chart.yAxis
+        .axisLabel('y')
+        .tickFormat(d3.format('.2f'));
+
+      d3.select('svg')
+        .datum(vm.data)
+        .call(chart);
+
+      nv.utils.windowResize(function() {
+        chart.update()
+      });
+
+      return chart;
+    });
 
     // function getAllTodos() {
     //   Todo.getTodos()
