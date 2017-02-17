@@ -1,7 +1,7 @@
 {
-  "name": "johntodoapp",
+  "name": "acetaminophen-psi-calculator",
   "version": "1.1.1",
-  "description": "JohnToDoApp: An Ionic project",
+  "description": "Acetaminophen Psi Calculator",
   "dependencies": {
     "angular-chart.js": "^1.1.1",
     "gulp": "^3.5.6",
